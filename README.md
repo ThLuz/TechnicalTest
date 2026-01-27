@@ -76,6 +76,7 @@ cd TechnicalTest/backend
 cp .env.example .env
 # Edite o .env e defina:
 # DB_PASSWORD=root
+# DB_HOST=127.0.0.1
 composer install
 php artisan key:generate
 php artisan migrate
