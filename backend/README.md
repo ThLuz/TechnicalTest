@@ -14,7 +14,7 @@
 
 ---
 
-## ℹ️ About the Project
+## ℹ️ Sobre o Projeto
 
 **Fila de Integração de Clientes** é um **mini-sistema backend em Laravel** que simula o processamento assíncrono de integrações com sistemas externos utilizando **filas (Queue) e Redis**.
 
