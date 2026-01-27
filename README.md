@@ -56,6 +56,8 @@ O sistema permite:
 git clone https://github.com/ThLuz/TechnicalTest.git
 cd TechnicalTest/backend
 cp .env.example .env
+# Edite o .env e defina:
+# DB_PASSWORD=root
 docker-compose up -d
 docker-compose exec app composer install
 docker-compose exec app php artisan key:generate
@@ -71,6 +73,8 @@ docker-compose exec app php artisan queue:work redis --sleep=3 --tries=3
 git clone https://github.com/ThLuz/TechnicalTest.git
 cd TechnicalTest/backend
 cp .env.example .env
+# Edite o .env e defina:
+# DB_PASSWORD=root
 composer install
 php artisan key:generate
 php artisan migrate
