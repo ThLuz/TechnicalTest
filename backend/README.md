@@ -14,7 +14,7 @@
 
 ---
 
-## ℹ️ Sobre o projeto
+## ℹ️ About the Project
 
 **Fila de Integração de Clientes** é um **mini-sistema backend em Laravel** que simula o processamento assíncrono de integrações com sistemas externos utilizando **filas (Queue) e Redis**.
 
@@ -28,16 +28,16 @@ O sistema permite:
 
 ---
 
-## 🎯 Objetivos do Projeto
+## 🚀 Requisitos
 
-- Demonstrar uso profissional de **Laravel Queue**
-- Implementar **processamento assíncrono real**
-- Simular integração com sistema externo
-- Controlar tentativas e erros
-- Expor API REST organizada e testada
-- Garantir rastreabilidade por status e logs
+- PHP >= 8.2  
+- Composer  
+- MySQL ou MariaDB  
+- Redis  
+- Docker e Docker Compose (opcional, recomendado)  
 
 ---
+
 
 ## 💻 Tecnologias Utilizadas
 
@@ -51,29 +51,14 @@ O sistema permite:
 
 ---
 
-## ▶️ Getting Started (Com Docker)
+## ▶️ Começando (Com Docker)
 
 ```bash
-# Clone o repositório
 git clone https://github.com/ThLuz/TechnicalTest.git
-
-# Acesse o backend
 cd TechnicalTest/backend
-
-# Copie o arquivo de ambiente
 cp .env.example .env
-
-# Suba os containers (Laravel, MySQL, Redis)
 docker-compose up -d
-
-# Instale as dependências
 docker-compose exec app composer install
-
-# Gere a chave da aplicação
 docker-compose exec app php artisan key:generate
-
-# Execute as migrations
 docker-compose exec app php artisan migrate
-
-# Inicie o worker da fila
 docker-compose exec app php artisan queue:work redis --sleep=3 --tries=3
