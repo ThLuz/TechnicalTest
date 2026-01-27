@@ -77,3 +77,64 @@ php artisan migrate
 php artisan serve
 php artisan queue:work redis --sleep=3 --tries=3
 ```
+
+---
+
+## 🔹 API Endpoints
+
+### Criar Integração
+POST /api/integrations/customers
+
+Request:
+{
+  "external_id": "123",
+  "nome": "Fulano da Silva",
+  "cpf": "12345678901",
+  "email": "fulano@email.com"
+}
+
+Response:
+{
+  "id": 1,
+  "status": "PENDING"
+}
+
+### Consultar Status
+GET /api/integrations/customers/{id}
+
+### Listar Últimos Jobs
+GET /api/integrations/customers
+
+### Fake Integração Externa
+POST /fake/external/customers
+
+Regras:
+- external_id par → sucesso (200)
+- external_id ímpar → erro (500)
+
+## 🔄 Processamento Assíncrono
+
+Job: ProcessIntegrationJob
+
+Status:
+- PENDING
+- PROCESSING
+- SUCCESS
+- ERROR
+
+Retry automático:
+- 3 tentativas
+- 10s, 30s, 60s
+
+## 🖥 Interface Web
+
+Rota: /integrations  
+Exibe: ID, External ID, Status, Tentativas, Data de processamento
+
+## 📝 Logs
+
+storage/logs/laravel.log
+
+## ✅ Testes
+
+php artisan test
