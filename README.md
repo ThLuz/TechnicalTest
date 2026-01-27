@@ -50,16 +50,6 @@ O sistema permite:
 
 ---
 
-## 🎨 Layout 
-
-Pré-visualização do layout da página:
-
-<p align="center">
-  <img src="https://i.imgur.com/itbExp7.png" alt="Teste prático Layout Preview"/>
-</p>
-
----
-
 ## ▶️ Começando (Com Docker)
 
 ```bash
@@ -93,6 +83,18 @@ php artisan migrate
 php artisan serve
 php artisan queue:work redis --sleep=3 --tries=3
 ```
+
+---
+
+## 🎨 Layout 
+
+Pré-visualização do layout da página:
+
+<p align="center">
+  <img src="https://i.imgur.com/itbExp7.png" alt="Teste prático Layout Preview"/>
+</p>
+
+Por padrão: http://127.0.0.1:8000/
 
 ---
 
